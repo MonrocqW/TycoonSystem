@@ -34,6 +34,11 @@ namespace TycoonSystem.Core
 
         public event Action onNewLevel;
 
+        private void OnEnable()
+        {
+            m_currentLevel = 0;
+        }
+
         public virtual void UpgradeBy(int p_levels)
         {
             float l_cost = this.GetCostForNLevels(p_levels);
@@ -57,7 +62,7 @@ namespace TycoonSystem.Core
         protected float GetCostForNLevels(int p_nbUpgradeLevels)
         {
             float l_cost = 0;
-            for (int l_id = 1; l_id <= p_nbUpgradeLevels + 1; l_id++)
+            for (int l_id = 1; l_id <= p_nbUpgradeLevels; l_id++)
             {
                 l_cost += this.GetCostForLevelN(CurrentLevel + l_id);
             }
@@ -65,6 +70,6 @@ namespace TycoonSystem.Core
             return l_cost;
         }
 
-        protected float GetCostForLevelN(int p_level) => BaseUpgradeCost * Mathf.Pow(COST_SCALING, p_level);
+        protected float GetCostForLevelN(int p_level) => BaseUpgradeCost * Mathf.Pow(COST_SCALING, p_level-1);
     }
 }

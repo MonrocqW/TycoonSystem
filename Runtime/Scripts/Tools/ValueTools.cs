@@ -8,6 +8,8 @@ namespace TycoonSystem.Tools
 
         public static string GetDisplayValue(float p_value)
         {
+            if (p_value < 1)
+                return p_value.ToString("F1");
             int l_tenPower = (int)Mathf.Log(p_value, 1000);
             return (p_value / Mathf.Pow(1000, l_tenPower)).ToString("F1") + " " + s_displaySymbols[l_tenPower];
         }

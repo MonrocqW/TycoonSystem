@@ -7,11 +7,16 @@ namespace TycoonSystem.Core
     {
         [SerializeField] protected string m_currencyName;
 
-        protected float m_currentValue;
+        protected float m_currentValue = 0;
 
         public string CurrencyName => m_currencyName;
         public virtual float CurrentValue => m_currentValue;
         public virtual string DisplayValue => ValueTools.GetDisplayValue(CurrentValue);
+
+        private void OnEnable()
+        {
+            m_currentValue = 0;
+        }
 
         public bool CheckEnoughFunds(float p_needed) => m_currentValue >= p_needed;
 
