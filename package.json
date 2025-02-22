@@ -1,0 +1,8 @@
+{
+	"name": "com.wm.tycoon-system",
+	"displayName":"Tycoon System",
+	"version": "0.0.1",
+	"unity": "6000.0",
+	"dependencies": {
+	}
+}
