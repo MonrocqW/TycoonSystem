@@ -1,0 +1,18 @@
+{
+    "name": "TycoonSystem.Editor",
+    "rootNamespace": "",
+    "references": [
+        "TycoonSystem.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
